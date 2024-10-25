@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://tj5bofl4r523"]
+
+[ext_resource type="Script" path="res://component/camera.gd" id="1_u36od"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3apio"]
+albedo_color = Color(0.72849, 0.602944, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_soc8q"]
+albedo_color = Color(0.729412, 0.603922, 0, 1)
+
+[node name="Camera" type="Node3D" node_paths=PackedStringArray("follow_target")]
+script = ExtResource("1_u36od")
+follow_target = NodePath("")
+
+[node name="Direction" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.288346, -1)
+size = Vector3(0.045166, 0.0698242, 2)
+material = SubResource("StandardMaterial3D_3apio")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Direction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+radius = 0.0987599
+height = 0.261145
+sides = 16
+material = SubResource("StandardMaterial3D_soc8q")
+
+[node name="SpringArm" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)

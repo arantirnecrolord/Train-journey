@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://oueb4vsnyhfi"]
+
+[ext_resource type="PackedScene" uid="uid://bxgkkx2wpxsc2" path="res://ChME3_body.gltf" id="1_rg8kn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_poaq2"]
+size = Vector3(1, 1, 17.2458)
+
+[node name="train_body" type="Node3D"]
+
+[node name="ChME3_body" parent="." instance=ExtResource("1_rg8kn")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="locomotive_area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="locomotive_area"]
+shape = SubResource("BoxShape3D_poaq2")

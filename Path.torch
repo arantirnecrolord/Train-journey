@@ -1,0 +1,10 @@
+[orchestration type="OScript" load_steps=2 format=3 uid="uid://c63diflm1v1cv"]
+
+[obj type="OScriptGraph" id="OScriptGraph_vafr6"]
+graph_name = &"EventGraph"
+zoom = 0.620921
+flags = 8
+
+[resource]
+base_type = &"Path3D"
+graphs = Array[OScriptGraph]([SubResource("OScriptGraph_vafr6")])
