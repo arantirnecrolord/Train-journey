@@ -1,0 +1,12 @@
+# Blender 4.2.3 LTS MTL File: 'ChME3.blend'
+# www.blender.org
+
+newmtl Матеріал.005
+Ns 206.611618
+Ka 0.618182 0.618182 0.618182
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.900000
+d 1.000000
+illum 3
+map_Kd /home/arantir/Disk_D/desktop win/spale_texture.png

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctp304fmpgyx"]
 
-[ext_resource type="Script" path="res://player_control.gd" id="1_fkgno"]
-[ext_resource type="Script" path="res://camera.gd" id="1_sgglx"]
+[ext_resource type="Script" path="res://Entity/player_control.gd" id="1_fkgno"]
+[ext_resource type="Script" path="res://Entity/camera.gd" id="1_sgglx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vtk02"]
 radius = 0.3

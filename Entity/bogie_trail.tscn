@@ -61,4 +61,4 @@ transform = Transform3D(-2.14084e-08, 0.489767, 0, -0.489767, -2.14084e-08, 0, 0
 shape = SubResource("ConcavePolygonShape3D_p5aci")
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05694, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.057, 0)
