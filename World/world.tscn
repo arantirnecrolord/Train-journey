@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://n6q7jujsr0f4"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_78wqy"]
-[ext_resource type="PackedScene" uid="uid://ctp304fmpgyx" path="res://Entity/player.tscn" id="1_px7dx"]
+[ext_resource type="PackedScene" uid="uid://ctp304fmpgyx" path="res://Entity/player/player.tscn" id="1_px7dx"]
 [ext_resource type="PackedScene" uid="uid://b8jq7fsluggaf" path="res://Entity/bogie_trail.tscn" id="3_05loy"]
 [ext_resource type="PackedScene" uid="uid://dry74rvenod10" path="res://Entity/train.tscn" id="3_mbn00"]
 [ext_resource type="Script" path="res://World/railway_mm.gd" id="3_y84xk"]
@@ -125,6 +125,7 @@ script = ExtResource("1_78wqy")
 
 [node name="Player" parent="." instance=ExtResource("1_px7dx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6474, 6.42362, -19.5774)
+walk_speed = 10.0
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -201,7 +202,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0187144, 0)
 material_override = SubResource("StandardMaterial3D_lvu23")
 multimesh = SubResource("MultiMesh_l1dcp")
 
-[node name="Switch1" type="Area3D" parent="." node_paths=PackedStringArray("forward_path", "backward_path")]
+[node name="Switch1" type="Area3D" parent="." node_paths=PackedStringArray("forward_path", "backward_path") groups=["switch"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.3268, 0.695469, -2.00343)
 script = ExtResource("7_rhove")
 forward_path = NodePath("../Railway2")
@@ -214,7 +215,7 @@ shape = SubResource("BoxShape3D_iri8q")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Switch1/CollisionShape3D"]
 mesh = SubResource("BoxMesh_s31w1")
 
-[node name="Switch2" type="Area3D" parent="." node_paths=PackedStringArray("forward_path", "backward_path")]
+[node name="Switch2" type="Area3D" parent="." node_paths=PackedStringArray("forward_path", "backward_path") groups=["switch"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4801, 0.692217, -16.3844)
 script = ExtResource("7_rhove")
 forward_path = NodePath("../Railway")

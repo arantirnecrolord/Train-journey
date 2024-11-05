@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctp304fmpgyx"]
+
+[ext_resource type="Script" path="res://Entity/player/player.gd" id="1_2setd"]
+[ext_resource type="PackedScene" uid="uid://b308bvcgwr327" path="res://Entity/player/tps_camera.tscn" id="2_svon4"]
+[ext_resource type="Script" path="res://Entity/player/engine_signal.gd" id="3_yll2p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vtk02"]
+radius = 0.3
+height = 1.7
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v56do"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("tps_camera", "model")]
+script = ExtResource("1_2setd")
+tps_camera = NodePath("TPSCamera")
+model = NodePath("MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.884857, 0)
+shape = SubResource("CapsuleShape3D_vtk02")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.603293, 0, 0, 0, 0.861893, 0, 0, 0, 0.629601, 0, 0.914177, 0)
+mesh = SubResource("CapsuleMesh_v56do")
+
+[node name="TPSCamera" parent="." instance=ExtResource("2_svon4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 2.75191, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="TPSCamera"]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0, -1.3993, 0)
+target_position = Vector3(0, 0, -5)
+collide_with_areas = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 392.0
+offset_bottom = 79.0
+text = "Запустити двигун: 3
+Керування локомотивом вперед/назад: 1, 2"
+
+[node name="engine_signal" type="TextEdit" parent="."]
+visible = false
+offset_left = 988.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 41.0
+text = "Двигун запущено!"
+script = ExtResource("3_yll2p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 572.0
+offset_top = 298.0
+offset_right = 574.0
+offset_bottom = 300.0
+color = Color(0, 0, 0, 1)

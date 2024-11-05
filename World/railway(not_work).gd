@@ -29,11 +29,11 @@ func spawn_item():
 		$Spawn_road.add_child(item_)
 		item_.translate(point)
 		# spale шпала
-		var spale = preload("res://World/spale.tscn").instantiate()
-		spale.name = "spale"
-		item_.add_child(spale)
+		#var spale = preload("res://World/spale.tscn").instantiate()
+		#spale.name = "spale"
+		#item_.add_child(spale)
 		
-		spale.translate(Vector3(0.05,0.0,0.0))
+		#spale.translate(Vector3(0.05,0.0,0.0))
 		
 		if idx+1 > points.size()-1:
 			item_.look_at(points[0], upVector)
@@ -41,4 +41,4 @@ func spawn_item():
 			item_.look_at(points[idx+1], upVector)
 			
 		item_.set_owner(get_tree().get_edited_scene_root())
-		spale.set_owner(get_tree().get_edited_scene_root())
+		#spale.set_owner(get_tree().get_edited_scene_root())

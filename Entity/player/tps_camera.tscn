@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b308bvcgwr327"]
+
+[ext_resource type="Script" path="res://Entity/player/third_person_camera.gd" id="1_d0scj"]
+
+[node name="TPSCamera" type="Node3D"]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 1.63894, 0)
+script = ExtResource("1_d0scj")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+spring_length = 4.0
+
+[node name="Camera" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62268e-07, 0, 4.01306)

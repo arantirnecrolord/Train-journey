@@ -27,4 +27,6 @@ func _on_body_entered(body):
 			bogie.path = backward_path
 			bogie.progress = backward_path.curve.get_closest_offset(body.global_position)
 	
-		
+func switch() -> void:
+	active = not active
+	
